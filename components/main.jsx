@@ -2,6 +2,7 @@ import * as React from "react"
 import { AppContext } from "../context/appContext"
 import useContext from "../hooks/useContext"
 import Input from "./input"
+import Link from 'next/link'
 
 const Main = React.FC = () => {
     const { todoStore } = useContext(AppContext);
@@ -26,13 +27,14 @@ const Main = React.FC = () => {
                 <p className="description">
                     Get started by editing <code>pages/index.js</code>
                 </p>
+
                 <div className="search">
-                <Input 
-                    value={value} 
-                    onChange={handleOnChange}/>
+                    <Input
+                        value={value}
+                        onChange={handleOnChange} />
                     <button onClick={handleOnClick} className="button">Add</button>
                 </div>
-                
+
                 <ul className="grid">
                     {todoStore.list.map((item, index) => {
                         return (
@@ -42,6 +44,10 @@ const Main = React.FC = () => {
                         )
                     })}
                 </ul>
+
+                <Link href="/list">
+                    <a className="link">Click here if you want to change page...</a>
+                </Link>
             </main>
 
             <footer>
@@ -51,9 +57,9 @@ const Main = React.FC = () => {
                     rel="noopener noreferrer"
                 >
                     Powered by{' '}
-                    <img 
-                        src="/vercel.svg" 
-                        alt="Vercel Logo" 
+                    <img
+                        src="/vercel.svg"
+                        alt="Vercel Logo"
                         className="logo" />
                 </a>
             </footer>
@@ -115,6 +121,13 @@ const Main = React.FC = () => {
             a {
                 color: inherit;
                 text-decoration: none;
+            }
+
+            .link {
+                color: #0070f3;
+                font-size: 1.4rem;
+                font-weight: bold;
+                text-decoration: underline;
             }
 
             .title a {
