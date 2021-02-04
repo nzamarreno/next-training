@@ -1,1 +1,2 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# Training Next JS
+Simple training with Next JS with Mobx 
